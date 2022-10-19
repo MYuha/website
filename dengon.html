@@ -1,0 +1,31 @@
+<!doctype	html>
+<html>
+	<head>
+		<meta	charset="utf-8"/>
+		<script>
+      function message(){
+        if(messages.value === ""){
+          alert("内容を入れてください。")
+        }
+        else{
+          MArea.innerText	=	messages.value;
+          Image.src = `https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=${messages.value)`;
+			    alert("伝言をセットしました");
+          messages.value	=	"";
+        }
+      }
+    </script>
+	</head>
+	<body>
+				<h2>伝言板</h2>
+        <p>下のフォームから伝言をセットしてください。</p>
+
+        <input id = "messages">
+        <button onclick = "message();">セット</button>
+
+        <p>---------------</p>
+        <p id = "MArea">伝言はまだありません。</p>
+      	<p><img	id="Image"	alt="QRコード"></p>
+        <p>---------------</p>
+	</body>
+</html>
